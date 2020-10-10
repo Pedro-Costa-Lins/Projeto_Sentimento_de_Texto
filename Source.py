@@ -1,20 +1,26 @@
-def separadorDePalavras(Frase):
-    Lista = Frase.split()
-    return Lista
 
-def comparador(Frase,Lista):
-    for i in Lista:
-        for j in Frase:
-            if i == j:
-                return True
-    return False
+ArquivoFeliz = open(r"PalavrasRelacionadasFELICIDADE.txt","r")
+ArquivoRaivoso = open(r"PalavrasRelacionadasRAIVA.txt","r")
+ArquivoTriste = open(r"PalavrasRelacionadasTRSITEZA.txt","r")
 
-Lista = separadorDePalavras(input("Escreva uma frase: "))
+def listador(TXT):
+    Listagem = []
+    for linha in TXT:
+        Listagem.append(linha)
+    return Listagem
 
-ListaNegativas = ['Não' , 'odeio' , 'morra' , 'idiota' , 'matar']
+ListaFeliz = listador(ArquivoFeliz)
+ListaRaivosa = listador(ArquivoRaivoso)
+ListaTriste = listador(ArquivoTriste)
 
-resultado = comparador(Lista,ListaNegativas)
+Feliz = 0
+Triste = 0
+Raivoso = 0
 
-print(resultado)
+texto = input("Escreva uma frase: ")
+
+listinha = texto.split()
+
+print(listinha)
 
 print("-Finalizado-")
