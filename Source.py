@@ -35,18 +35,18 @@ def veredito():
                 PtsFelizes += 1
                 Encontrado = True
                 break
-        if Encontrado = False:
+        if Encontrado == False:
             for comparada in ListaRaivosa:
                 if palavra.casefold() == comparada.casefold():
                     PtsRaivosos += 1
                     Encontrado = True
                     break
-        if Encontrado = False:
+        if Encontrado == False:
             for comparada in ListaTriste:
                 if palavra.casefold() == comparada.casefold():
                     PtsTristes += 1
                     break
-                
+
     #Uma avaliação das pontuações e a declaração da maior        
     if PtsFelizes > PtsRaivosos and PtsFelizes > PtsTristes:
         return "Felicidade"
