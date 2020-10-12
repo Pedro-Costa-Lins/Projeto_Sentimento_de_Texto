@@ -1,16 +1,16 @@
-#--==<Abre os documentos de texto para análise.>==--
+#(01)--==<Abre os documentos de texto para análise.>==--
 ArquivoFeliz   = open(r"PalavrasRelacionadasFELICIDADE.txt","r")
 ArquivoRaivoso = open(r"PalavrasRelacionadasRAIVA.txt","r")
 ArquivoTriste  = open(r"PalavrasRelacionadasTRISTEZA.txt","r")
 
-#Transforma cada documento de texto em uma lista de palavras.>==--
+#(Fn01)Transforma cada documento de texto em uma lista de palavras.>==--
 def listador(txt):
     Listagem = []
     for linha in txt:
         Listagem.append(linha.rstrip())
     return Listagem
 
-#--==<Tranforma a frase numa lista, remove vírgulas de palavras que terminam com as mesmas e adiciona a vírgula como parte idempendente da lista.>==--
+#(Fn02)--==<Tranforma a frase numa lista, remove vírgulas de palavras que terminam com as mesmas e adiciona a vírgula como parte idempendente da lista.>==--
 def formatador(texto):
     Lista = texto.split()
     Adicionado = False
@@ -18,28 +18,33 @@ def formatador(texto):
         if Adicionado:
             Adicionado = False
             continue
-        if Lista[i][-1] == ",":
-            Lista[i].replace(",", "")
+        elif Lista[i][-1] == ",":
+            Lista[i] = Lista[i].replace(",", "")
             Lista.insert(i + 1, ",")
+            Adicionado = True
+        if Lista[i][-1] == ".":
+            Lista[i] = Lista[i].replace(".", "")
+            Lista.insert(i + 1, ".")
             Adicionado = True
     return Lista
 
-#--==<Cada grupo de palavras separado na lista adequada.>==--
+#(02)--==<Cada grupo de palavras separado na lista adequada.>==--
 ListaFeliz   = listador(ArquivoFeliz)
 ListaRaivosa = listador(ArquivoRaivoso)
 ListaTriste  = listador(ArquivoTriste)
 
-#--==<Avalia a frase e devolve um resultado.>==--
+#(Fn03)--==<Avalia a frase e devolve um resultado.>==--
 def veredito():
-    #Acumuladores para contabilizar a aparição de palavras que representem certo sentimento.
+    #(Fn03.1)Acumuladores para contabilizar a aparição de palavras que representem certo sentimento.
     PtsFelizes  = 0
     PtsRaivosos = 0
     PtsTristes  = 0
     Encontrado  = False
     Negação     = False
     
-    #Uma sequencia de comparações para preencher os acumuladores
+    #(Fn03.2)Uma sequencia de comparações para preencher os acumuladores
     for palavra in Listinha:
+        
         #Reseta o boleano de controle.
         Encontrado = False
         
@@ -47,13 +52,13 @@ def veredito():
         if palavra == ",":
             Negação = False 
         
-        #Ao ser identificada, a próxima palavra que expressar sentimento antes de uma vírgula vai ter um efeito negativo na pontuação de sentimento.
+        #(Fn03.3)Ao ser identificado, o advérbio de negação, fará com que a próxima palavra que expressar sentimento antes de uma vírgula vai ter um efeito negativo na pontuação de sentimento.
         #De imediato começa a análise da próxima palavra.
-        if palavra.casefold() == "não" or palavra.casefold() == "nem":
+        if palavra.casefold() == "não" or palavra.casefold() == "nem" or palavra.casefold() == "tampouco" or palavra.casefold() == "jamais" or palavra.casefold() == "nunca":
             Negação = True
             continue
         
-        #Comparador.
+        #(Fn03.4)Comparador.
         for comparada in ListaFeliz:
             if palavra.casefold() == comparada.casefold():
                 if Negação:
@@ -88,7 +93,7 @@ def veredito():
                         PtsTristes += 1
                         break
     
-    #Uma avaliação das pontuações e a declaração da maior        
+    #(Fn03.5)Uma avaliação das pontuações e a declaração da maior        
     if PtsFelizes > PtsRaivosos and PtsFelizes > PtsTristes:
         return "Felicidade."
     elif PtsRaivosos > PtsFelizes and PtsRaivosos > PtsTristes:
@@ -98,7 +103,7 @@ def veredito():
     else:
         return "Inconlusão."
 
-#--==<Input inicial a ser comparado.>==--
+#(03)--==<Input inicial a ser comparado.>==--
 texto = input("Escreva uma frase: ")
 
 Listinha = formatador(texto)

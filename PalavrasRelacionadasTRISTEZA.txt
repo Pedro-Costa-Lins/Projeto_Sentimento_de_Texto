@@ -171,6 +171,7 @@ assolação
 weltschmertz
 atrabílis
 hemicrania
+suicidio
 dó
 pifar
 morrinha
@@ -428,7 +429,6 @@ deprê
 cismativo
 capiongo
 atristurado
-abatido de ânimo
 frio
 bruno
 cego
@@ -551,10 +551,8 @@ negrejante
 murmurador
 murchinho
 mortuário
-metido consigo mesmo
 mazanza
 malcontente
-mal humorado
 lipemaníaco
 juruju
 irreparável
@@ -574,7 +572,6 @@ aqueronteu
 aquerôntico
 assopeado
 astroso
-atacado de atrabílis
 atrabilioso
 avexado
 avolitiva

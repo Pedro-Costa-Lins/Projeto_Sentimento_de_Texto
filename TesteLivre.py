@@ -11,7 +11,9 @@ def formatador(texto):
             Adicionado = False
             continue
         if Lista[i][-1] == ",":
-            Lista[i].replace(",", "")
+            Lista[i] = Lista[i].replace(",", "")
             Lista.insert(i + 1, ",")
             Adicionado = True
     return Lista
+
+print(formatador(texto))
