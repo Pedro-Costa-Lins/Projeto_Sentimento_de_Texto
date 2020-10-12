@@ -87,25 +87,24 @@ def veredito():
                     else:
                         PtsTristes += 1
                         break
-    #Mostra a pontuação
-
-
-
+    
     #Uma avaliação das pontuações e a declaração da maior        
     if PtsFelizes > PtsRaivosos and PtsFelizes > PtsTristes:
-        return "Felicidade"
+        return "Felicidade."
     elif PtsRaivosos > PtsFelizes and PtsRaivosos > PtsTristes:
-        return "Raiva"
+        return "Raiva."
     elif PtsTristes  > PtsFelizes and PtsTristes > PtsRaivosos:
-        return "Tristeza"
+        return "Tristeza."
     else:
-        return "Inconclusivo"
+        return "Inconlusão."
 
 #--==<Input inicial a ser comparado.>==--
 texto = input("Escreva uma frase: ")
 
 Listinha = formatador(texto)
 
-print(veredito())
+FraseDeEntrega = "Esse texto tende a"
+
+print(FraseDeEntrega, veredito())
 
 print("-Finalizado-")
