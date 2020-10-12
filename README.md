@@ -13,7 +13,7 @@ Será agora mencionada o índice da parte do código a qual se pretende disserta
 
 =(Fn01) Cria uma lista, e irá adicionar na mesma cada linha individual, sem contar o caractere "\n".
 
-=(Fn02) Recebe uma frase, a separa numa lista usando os espaços como divisores, a variável "Adicionado" registra se houve uma interação do código com uma vírgula e seu estado inicial é "False". Se inicia um laço no tamanho da lista (quantidade de palavras) com a variável "i" servindo de controle em formato de inteiro. De imediato se verifica o estado da variável "Adicionado", se o estado da mesma for "true", ele será resetado e a pulará para a próxima iteração do laço, senão, será verificado se o último caractere é uma vírgula, sendo ele, a vírgula será removida e adicionada a lista como um termo independente logo após. O mesmo acontece com ".". Retorna a lista.
+=(Fn02) Recebe uma frase, a separa numa lista usando os espaços como divisores, a variável "Adicionado" registra se houve uma interação do código com uma vírgula e seu estado inicial é "False". Se inicia um laço no tamanho da lista (quantidade de palavras) com a variável "i" servindo de controle em formato de inteiro. De imediato se verifica o estado da variável "Adicionado", se o estado da mesma for "true", ele será resetado e a pulará para a próxima iteração do laço, senão, será verificado se o último caractere é uma vírgula, sendo ele, a vírgula será removida e adicionada a lista como um termo independente logo após. O mesmo acontece com ".", "!", ";". Retorna a lista.
 
 =(Fn03) Vai avaliar o texto de acordo com a lógica programada e as listas de palavras relacionadas a sentimentos.
 -(Fn03.1) Cria 3 variáveis acumuladoras que servirão para calcular a quantidade de sentimento na frase e dois booleanos de controle que ajudarão na interpretação do texto.
@@ -21,3 +21,5 @@ Será agora mencionada o índice da parte do código a qual se pretende disserta
 -(Fn03.3) Ao encontrar uma das palavras citadas, ativa um efeito de negação que vai contar negativamente na pontuação da próxima palavra de sentimento encontrada. E imediatamente passa para a próxima palavra.
 -(Fn03.4) Um comparador que procura se uma palavra está dentro de uma das listas, levando em consideração se existe uma negação e pontuando de acordo, e ao encontrar uma palavra o mesmo encerra a iteração própria e impede que a mesma palavra seja considerada em outras listas.
 -(Fn03.5) São comparadas as pontuações relacionadas com cada sentimento, e se existir uma predominância, a mesma será dada como resposta, caso contrário, o resultado é inconclusivo.
+
+Para utilizar o programa, execute-o e alimente um texto qualquer, considerando que foi usada uma linguagem formal, o mesmo vai comparar a uma acervo de cerca de 2000 palavras para achar compatibilidade e associar a sentimentos.

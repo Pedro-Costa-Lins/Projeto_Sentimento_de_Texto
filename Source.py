@@ -22,9 +22,17 @@ def formatador(texto):
             Lista[i] = Lista[i].replace(",", "")
             Lista.insert(i + 1, ",")
             Adicionado = True
-        if Lista[i][-1] == ".":
+        elif Lista[i][-1] == ".":
             Lista[i] = Lista[i].replace(".", "")
             Lista.insert(i + 1, ".")
+            Adicionado = True
+        elif Lista[i][-1] == "!":
+            Lista[i] = Lista[i].replace("!", "")
+            Lista.insert(i + 1, "!")
+            Adicionado = True
+        elif Lista[i][-1] == ";":
+            Lista[i] = Lista[i].replace(";", "")
+            Lista.insert(i + 1, ";")
             Adicionado = True
     return Lista
 
@@ -49,7 +57,7 @@ def veredito():
         Encontrado = False
         
         #Se uma virgula for encontrada, a negação perde o efeito.
-        if palavra == ",":
+        if palavra == "," or palavra == ".":
             Negação = False 
         
         #(Fn03.3)Ao ser identificado, o advérbio de negação, fará com que a próxima palavra que expressar sentimento antes de uma vírgula vai ter um efeito negativo na pontuação de sentimento.
